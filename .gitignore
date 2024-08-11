@@ -31,3 +31,6 @@ tests/cypress/videos
 tests/cypress/downloads
 
 sparc_portal_env_vars.sh
+
+# Example dataset
+backend/example_dataset/*
