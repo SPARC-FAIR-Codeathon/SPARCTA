@@ -1,0 +1,32 @@
+{
+  "image": { "image_id": 1 },
+  "annotations": [
+    {
+      "annotation": "test1",
+      "annotation_coordinates": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [0, 0],
+            [0, 1],
+            [1, 1],
+            [1, 0],
+            [0, 0]
+          ]
+        ]
+      }
+    },
+    {
+      "annotation": "test2",
+      "annotation_coordinates": {
+        "type": "circle",
+        "center": [0, 0],
+        "radius": 1
+      }
+    },
+    {
+      "annotation": "test3",
+      "annotation_coordinates": { "type": "point", "coordinates": [0, 0] }
+    }
+  ]
+}
