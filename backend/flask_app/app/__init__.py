@@ -23,7 +23,8 @@ def get_image():
     if dzi_file is None:
         abort(404)
     else:
-        return send_from_directory(dzi_file.parent, dzi_file.name)
+        return str(dzi_file)
+        #return send_from_directory(dzi_file.parent, dzi_file.name)
 
 
 @app.route("/image_view")

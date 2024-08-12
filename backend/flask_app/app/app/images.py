@@ -1,4 +1,4 @@
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from shutil import rmtree
 import io
 import os
@@ -107,7 +107,7 @@ def create_test_dataset():
     convert_tif_dzi(TIFF_DZI_CONVERTER)
 
 
-def get_dataset_tif_file(relative_path):
+def _get_dataset_tif_file(relative_path):
     if relative_path  == "test":
         return TEST_IMG_PATH
     if relative_path[0] == "/":
@@ -117,4 +117,12 @@ def get_dataset_tif_file(relative_path):
     dzi_file = dzi_file / f"{tif_path.stem}.dzi"
     if dzi_file.exists():
         return dzi_file
+    
+def get_dataset_tif_file(relative_path):
+    dzi_file = _get_dataset_tif_file(relative_path)
+    if dzi_file is not None:        
+        # Relative to static
+        relative_path = Path(os.path.relpath(dzi_file.parent,STATIC_PATH.parent))
+        relative_path = relative_path/dzi_file.name
+        return '/' + str(PurePosixPath(relative_path))
     return None
