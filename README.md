@@ -36,6 +36,7 @@ In order to tackle these issues, we have developed a web-based viewer for TIFF f
   - SPARCTA also supports a *Full Screen* mode, allowing for detailed examination of the all features presented in the image by the users in one go.
 - **Annotations**:
   - Users can create *custom annotations* on top of the image in order to highlight features in the image, tagged by their user name/id.
+  - SPARCTA supports *annotation history*, showing the users their previous annotations made in each session.
   - SPARCTA supports *annotations by multiple users* at once, allowing for enhanced collaboration between different users of the SPARC portal.
   - Users can also *save* their annotations for later use in a human-readable format.
 
