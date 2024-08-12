@@ -25,7 +25,7 @@ def image_view():
 
 @app.route('/get_annotations', methods=['POST', 'GET'])
 def get_annotations():
-    data = request.form.to_dict()
+    data = request.json
     imageid = data['imageid']
     annotations = Image.filter(Image.image_name == imageid).first().annotations
     annotation_list = []
@@ -41,16 +41,17 @@ def get_annotations():
     return json.dumps(annotation_list)
 
 
-@app.route('/add_annotations', methods=['POST'])
+@app.route('/add_annotations', methods=['POST', 'GET'])
 def add_annotations():
-    data = request.form.to_dict()
-    annotations = data['annotations']
-    imageid = data['imageid']
-    images = Image.filter(Image.image_name == imageid).all()
+    data = request.json
+    print(data)
+    imageid = data['image_id']
+    images = Image.filter(Image.id == imageid).all()
     if not images:
         return 'image not found'
     elif len(images) > 1:
         return 'multiple images found'
+    annotations = data['annotations']
 
     imges = images[0]
 
@@ -63,9 +64,9 @@ def add_annotations():
     return 'success'
 
 
-@app.route('/remove_annotations', methods=['POST'])
+@app.route('/remove_annotations', methods=['POST', 'GET'])
 def remove_annotations():
-    data = request.form.to_dict()
+    data = request.json
     for annotation in data['annotations']:
         Annotation.filter(Annotation.annotation == annotation).delete()
 
@@ -74,9 +75,9 @@ def remove_annotations():
     return 'success'
 
 
-@app.route('/update_annotations', methods=['POST'])
+@app.route('/update_annotations', methods=['POST', 'GET'])
 def update_annotations():
-    data = request.form.to_dict()
+    data = request.json
 
     for annotation in data['annotations']:
         ann = Annotation.filter(
@@ -93,4 +94,4 @@ if __name__ == '__main__':
 
     # run() method of Flask class runs the application
     # on the local development server.
-    app.run()
+    app.run(debug=True)
