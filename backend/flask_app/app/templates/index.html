@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zooming</title>
+  </head>
+  <body>
+    <!--<img src="{{ url_for('static', filename='img/test.png') }}" />-->
+    <div id="openseadragon1" style="width: 800px; height: 600px"></div>
+    <footer>
+      <script src="https://cdn.jsdelivr.net/npm/openseadragon@4.1/build/openseadragon/openseadragon.min.js"></script>
+
+      <script type="text/javascript">
+        var viewer = OpenSeadragon({
+          id: "openseadragon1",
+          prefixUrl: "/openseadragon/images/",
+          tileSources: "{{ url_for('static', filename='img/test.dzi') }}",
+        });
+      </script>
+    </footer>
+  </body>
+</html>
