@@ -57,6 +57,28 @@ SPARCTA is essentially built of three components:
 - **Database**: Annotations are stored by SPARTCA in a sqlite database. See [database README](./database/README.md) for details.
 - **Backend**: For demonstration purposes, the backend for SPARCTA is currently provided by a flask application with both serves the Deepzoom images created from TIFF files to the frontend and stores the annotations received from the frontend in the database. See [backend README](./backend/README.md) for details.
 
+## Functionality Overview
+
+### Accessing SPARCTA
+
+![Accessing SPARCT](assets/gif/01_opening_sparcta.gif)
+
+### SPARCTA Overview
+![SPARCTA Overview](assets/gif/02_sparcta_overview.gif)
+
+### Zoom and Pan
+![Zoom and Pan](assets/gif/03_zoom_function.gif)
+
+### Fullscreen Mode
+![Fullscreen](assets/gif/04_fullscreen_mode.gif)
+
+### Rectange Annotation
+![Rectangle Annotation](assets/gif/05_rect_annotation.gif)
+
+### Freeform Annotation
+![Freeform Annotation](assets/gif/06_freeform_annotation.gif)
+
+
 ## Using SPARCTA
 
 To experience the current capabilities of the SPARCTA prototype, simply download and run it on your local machine. To do this, follow these setup instructions:
