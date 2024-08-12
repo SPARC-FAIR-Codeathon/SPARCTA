@@ -1,6 +1,7 @@
+from app.models import Annotation
+from app.database import db_session, init_db
 import json
 from flask import request, render_template, Flask, abort, send_from_directory
-from app.models import Image, Annotation
 from app.images import create_test_dataset, get_dataset_tif_file
 
 app = Flask(__name__)
@@ -9,6 +10,10 @@ app = Flask(__name__)
 REMAKE_TEST_DATASET = False
 if REMAKE_TEST_DATASET:
     create_test_dataset()
+
+app = Flask(__name__)
+
+init_db()
 
 
 @app.route("/image/dzi", methods=["GET"])
@@ -19,6 +24,7 @@ def get_image():
         abort(404)
     else:
         return send_from_directory(dzi_file.parent, dzi_file.name)
+
 
 @app.route("/image_view")
 def image_view():
