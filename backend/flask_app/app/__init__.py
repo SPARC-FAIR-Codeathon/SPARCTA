@@ -27,18 +27,19 @@ def image_view():
 
 @app.route("/get_annotations", methods=["POST", "GET"])
 def get_annotations():
-    data = request.json
-    imageid = data['imageid']
-    annotations = Image.filter(Image.image_name == imageid).first().annotations
+    data = request.json[0]
+    print(data)
     annotation_list = []
+    annotations = Annotation.query.filter(
+        Annotation.image_id == data['source'],
+        Annotation.user_id == data['user'])
 
     for annotation in annotations:
+        print(annotation.annotation)
         annotation_list.append(
-            {
-                "annotation": annotation.annotation,
-                "annotation_coordinates": annotation.annotation_coordinates,
-            }
-        )
+            json.loads(annotation.annotation.replace("\'", "\"")))
+
+    print(annotation_list)
 
     return json.dumps(annotation_list)
 
@@ -46,30 +47,36 @@ def get_annotations():
 @app.route('/add_annotations', methods=['POST', 'GET'])
 def add_annotations():
     data = request.json
-    print(data)
-    imageid = data['image_id']
-    images = Image.filter(Image.id == imageid).all()
-    if not images:
-        return "image not found"
-    elif len(images) > 1:
-        return 'multiple images found'
-    annotations = data['annotations']
+    already_in_db = []
+    # TODO Check if annotation i
+    added_annotation_count = 0
 
-    imges = images[0]
+    for dt in data:
+        if Annotation.query.filter(
+                Annotation.annotation_id == dt['id']).first():
+            continue
+        if dt["id"] in already_in_db:
+            continue
 
-    for annotation in annotations:
-        ann = Annotation(annotation["annotation"], annotation["annotation_coordinates"])
-        imges["annotations"].append(ann)
+        already_in_db.append(dt['id'])
+
+        new_add = Annotation(dt['user'], dt['target']['source'], dt['id'],
+                             str(dt))
+        db_session.add(new_add)
+        added_annotation_count += 1
     db_session.commit()
 
-    return "success"
+    return 'Success. Added {} new annotations'.format(added_annotation_count)
 
 
 @app.route('/remove_annotations', methods=['POST', 'GET'])
 def remove_annotations():
     data = request.json
-    for annotation in data['annotations']:
-        Annotation.filter(Annotation.annotation == annotation).delete()
+    print(data)
+    for dt in data:
+        Annotation.query.filter(Annotation.annotation_id == dt['id'],
+                                Annotation.user_id == dt['user'],
+                                Annotation.image_id == dt['source']).delete()
 
     db_session.commit()
 
@@ -79,10 +86,13 @@ def remove_annotations():
 @app.route('/update_annotations', methods=['POST', 'GET'])
 def update_annotations():
     data = request.json
+    for dt in data:
+        annotation = Annotation.query.filter(
+            Annotation.annotation_id == dt['id'],
+            Annotation.user_id == dt['user'],
+            Annotation.image_id == dt['source']).first()
+        annotation.annotation = str(dt)
 
-    for annotation in data["annotations"]:
-        ann = Annotation.filter(Annotation.annotation == annotation["annotation"])
-        ann.update({"annotation_coordinates": annotation["annotation_coordinates"]})
     db_session.commit()
 
     return "success"
