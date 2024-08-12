@@ -1,18 +1,27 @@
-# Frontend
+# sparcta-viewer
 
-## Introduction
-The frontend part of the project derive from the current [SPARC Portal App](https://github.com/nih-sparc/sparc-app-2) to implement new functionality and UI to ease the viewing of TIFF files
+## Project setup
+```
+yarn install
+```
 
-## Changes made so far
-- [Updated action button behavior](#updated-action-button-behavior-componentsfilestablefilestablevue)
-- [New Component for SPARCTAViewer](#new-component-for-sparctaviewer)
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
+
+### Compiles and minifies for production
+```
+yarn build
+```
+
+### Lints and fixes files
+```
+yarn lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
-### Updated action button behavior (components/FilesTable/FilesTable.vue)
-Now if `file type == TIFF` "Open SPACRTA viewer button will appear"
-![Updated FilesTable component](docs/img/files_table_updated.png)
-
-### New Component for SPARCTAViewer
-
-## Related
-- [Figma design](https://www.figma.com/design/BCS3rpcSbwLDfVjOcHVGCJ/SPARC-Hackathon-Team-6?node-id=0-1&t=wcMz74B47sOALxnx-1)
+Okay isnt it a bummer when you want to see some files on SPARC but somehow you ended up how to download it? What if I just want to do a quick preview

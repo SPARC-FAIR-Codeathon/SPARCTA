@@ -46,7 +46,22 @@ export default defineNuxtConfig({
           rel: 'stylesheet',
           href:
             'https://fonts.googleapis.com/css?family=Asap:400,400i,500,600,700&display=swap'
+        },
+        { 
+          rel: 'stylesheet', 
+          href: '/css/annotorious.min.css' 
         }
+      ],
+      script: [
+        { 
+          src: '/js/openseadragon.min.js', 
+          defer: true 
+        },
+        { 
+          src: '/js/openseadragon-annotorious.min.js', 
+          defer: true 
+        }
+        
       ]
     }
   },

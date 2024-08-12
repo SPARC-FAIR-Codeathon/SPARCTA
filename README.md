@@ -5,6 +5,7 @@
 </p>
 
 ## Introduction
+Okay isnt it a bummer when you want to see some files on SPARC but somehow you ended up how to download it? What if I just want to do a quick preview
 
 ## Problem Definition
 - In the current version of SPARC Portal Users are unable to view TIFF images directly in the browser; they must download them first. This can be inconvenient, especially when users might want a quick look at the image without needing to download it.
