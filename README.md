@@ -9,6 +9,7 @@
 ## Problem Definition
 
 - In the current version of SPARC Portal Users are unable to view TIFF images directly in the browser; they must download them first. This can be inconvenient, especially when users might want a quick look at the image without needing to download it.
+- Some files are too large to be viewed in the browser or viewed locally on personal devices without modifying the original TIFF file.
 - Please mention about BioLucida Viewer and its limitation (Please help research)
 - Please highlight on the annotation limitation
 - Please highlight on the importance collaboration (Other people from the same group if they're given an access they can see the annotated tiff files to, allowing collaboration)
@@ -56,6 +57,7 @@ The SPARC codeathon focuses on ensuring that our code and data are FAIR, and we'
 
 We will be working on the following features in SPARCTA:
 
+- Expand the capability to annotate other image formats.
 - Allowing users to control annotation visibility, either keeping them private, making them publicly accessible, or sharing them selectively with other users.
 - Expert curation in SPARC Portal, where annotations can be accepted or rejected by qualified reviewers.
 - Leveraging curated data to train machine learning models and empowering all users to utilize this capability for annotating and exploring new images.
@@ -67,8 +69,8 @@ We will be working on the following features in SPARCTA:
 
 ## Team Members:
 
-- Haries (Lead, Frontend)
-- Archit (Backend)
-- Sruthi (Documentation, Backend-support)
-- Akram (Database)
-- Anmol (Database)
+- [Haries](https://github.com/hariesramdhani) (Lead, Frontend)
+- [Archit](https://github.com/bhatnagararchit) (Backend)
+- [Sruthi] (Documentation, Backend-support)
+- [Akram](https://github.com/akram0618) (Database)
+- [Anmol](https://github.com/codemeleon) (Database)
