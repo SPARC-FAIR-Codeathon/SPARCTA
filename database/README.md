@@ -45,4 +45,119 @@ class Annotation(Base):
 - The `user` field helps track the origin of each annotation, with a default value of "anonymous" for unspecified users.
 - Timestamps for creation and updates are automatically managed by SQLAlchemy, providing a record of when each annotation was created and last modified.
 
+Here's an additional section for the README document detailing the structure of the `annotation_coordinates` JSON field:
+
+---
+
+## Annotation Coordinates JSON Structure
+
+The `annotation_coordinates` field in the `annotations` table is designed to store spatial data in JSON format. This allows for flexibility in representing various types of annotations, such as polygons, circles, and points. The JSON structure is crucial for defining the shape and location of each annotation.
+
+### JSON Structure Overview
+
+The `annotation_coordinates` field can store different types of geometrical data. The format includes a `type` key that specifies the annotation type, followed by type-specific data. Below are the supported types and their respective structures:
+
+#### 1. Polygon
+
+Represents a polygon annotation. The JSON structure includes:
+
+- **`type`**: Specifies the shape as a polygon, should be `"Polygon"`.
+- **`coordinates`**: Contains vertices of the polygon. Each vertex is an array with `[x, y]` coordinates.
+
+Example:
+```json
+{
+  "type": "Polygon",
+  "coordinates": [
+    [
+      [0, 0],
+      [0, 1],
+      [1, 1],
+      [1, 0],
+      [0, 0]
+    ]
+  ]
+}
+```
+
+#### 2. Circle
+
+Represents a circular annotation. The JSON structure includes:
+
+- **`type`**: Should be `"circle"`.
+- **`center`**: An array specifying the `[x, y]` coordinates of the circle's center.
+- **`radius`**: The radius of the circle.
+
+Example:
+```json
+{
+  "type": "circle",
+  "center": [0, 0],
+  "radius": 1
+}
+```
+
+
+#### 3. Point
+
+Represents a single point annotation. The JSON structure includes:
+
+- **`type`**: Should be `"point"`.
+- **`coordinates`**: An array specifying the `[x, y]` coordinates of the point.
+
+Example:
+```json
+{
+  "type": "point",
+  "coordinates": [0, 0]
+}
+```
+
+### Usage Notes
+
+- **Flexibility**: The JSON structure allows for easy extension if additional types of annotations are needed in the future. Each type can be added with its own specific data format.
+
+### Example JSON Data
+
+Here's an example of a complete JSON object for annotations including different types:
+
+```json
+{
+  "image": { "image_id": 1 },
+  "annotations": [
+    {
+      "annotation": "test1",
+      "annotation_coordinates": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [0, 0],
+            [0, 1],
+            [1, 1],
+            [1, 0],
+            [0, 0]
+          ]
+        ]
+      }
+    },
+    {
+      "annotation": "test2",
+      "annotation_coordinates": {
+        "type": "circle",
+        "center": [0, 0],
+        "radius": 1
+      }
+    },
+    {
+      "annotation": "test3",
+      "annotation_coordinates": { "type": "point", "coordinates": [0, 0] }
+    }
+  ]
+}
+```
+
+This example demonstrates how different annotation types (polygon, circle, and point) are represented using the `annotation_coordinates` field.
+
+---
+
 
