@@ -156,6 +156,6 @@ Here's an example of a complete JSON object for annotations including different 
 
 This example demonstrates how different annotation types (polygon, circle, and point) are represented using the `annotation_coordinates` field.
 
----
+
 
 
