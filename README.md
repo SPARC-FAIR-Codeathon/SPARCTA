@@ -100,7 +100,7 @@ Once you have successfully set up SPARCTA, you can begin testing its features by
 ## Future Directions
 
 In the future, we will be working towards the following features/removing the following limitations in SPARCTA:
-- **Support for multi-dim TIFF**: Currently only 2D grayscale or RGB/RGBA TIFF images are supported, with no support for multi-channel, multi-slice or time-series TIFF images. In the future, we will work towards supporting such images, both the backend for rendering them on the viewer and on the frontend to allow users to explore multi-dimensional TIFF images.
+- **Support for multi-dim TIFF of different bitdepths**: Currently only 2D grayscale or RGB/RGBA 8-bit TIFF images are supported, with no support for multi-channel, multi-slice or time-series TIFF images. Other bit-depths are converted to 8-bits before viewing. In the future, we will work towards supporting such images, both the backend for rendering them on the viewer and on the frontend to allow users to explore multi-dimensional TIFF images with different bit depths.
 - **Dynamic deepzoom image generation**: Currently, we pre-create the deepzoom copies of each TIFF image, leading to more memory usage. We plan to implement dynamic generation of individual tiles of deepzoom images to alleviate this limitation.
 - **Annotation access controls**: Allowing users to control annotation visibility, either keeping them private, making them publicly accessible, or sharing them selectively with other users.
 - **Annotation curation**: Allow expert curation of user-/ai-generated annotations in SPARC Portal, where annotations can be accepted or rejected by qualified reviewers.
