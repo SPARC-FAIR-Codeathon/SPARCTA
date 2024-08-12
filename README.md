@@ -80,10 +80,10 @@ We will be working on the following features in SPARCTA:
 - If you encounter an issue with SPARCTA, kindly report it by creating a new issue in our GitHub repository.
 - We also encourage you to share your solution by submitting a pull request if you've managed to resolve the problem yourself.
 
-## Team Members:
+## Team Members
 
 - [Haries](https://github.com/hariesramdhani) (Lead, Frontend)
 - [Archit](https://github.com/bhatnagararchit) (Backend)
-- [Sruthi] (Documentation, Backend-support)
+- [Sruthi]() (Documentation, Backend-support)
 - [Akram](https://github.com/akram0618) (Database)
 - [Anmol](https://github.com/codemeleon) (Database)
