@@ -93,6 +93,5 @@ In the future, we will be working towards the following features/removing the fo
 
 - [Haries](https://github.com/hariesramdhani) (Lead, Frontend)
 - [Archit](https://github.com/bhatnagararchit) (Backend, Documentation)
-- [Sruthi]() (Documentation, Backend)
 - [Akram](https://github.com/akram0618) (Database, Backend)
 - [Anmol](https://github.com/codemeleon) (Database, Documentation)
