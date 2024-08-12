@@ -91,7 +91,7 @@ In the future, we will be working towards the following features/removing the fo
 ## Team Members
 
 - [Haries](https://github.com/hariesramdhani) (Lead, Frontend)
-- [Archit](https://github.com/bhatnagararchit) (Backend)
-- [Sruthi]() (Documentation, Backend-support)
-- [Akram](https://github.com/akram0618) (Database)
-- [Anmol](https://github.com/codemeleon) (Database)
+- [Archit](https://github.com/bhatnagararchit) (Backend, Documentation)
+- [Sruthi]() (Documentation, Backend)
+- [Akram](https://github.com/akram0618) (Database, Backend)
+- [Anmol](https://github.com/codemeleon) (Database, Documentation)
