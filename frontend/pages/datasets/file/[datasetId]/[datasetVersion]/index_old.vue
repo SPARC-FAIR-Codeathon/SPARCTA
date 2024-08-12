@@ -13,7 +13,7 @@
           </a>
         </span>
         <content-tab-card v-if="hasViewer" class="mt-24" :tabs="tabs" :active-tab-id="activeTabId">
-          <sparcta-viewer v-if="hasSparctaViewer" v-show="activeTabId === 'SparctaViewer'" :data="SparctaData"
+          <sparcta-viewer v-if="hasSPARCTAViewer" v-show="activeTabId === 'SPARCTAViewer'" :data="SPARCTAData"
             :datasetInfo="datasetInfo" :file="file" />
           <biolucida-viewer v-if="hasBiolucidaViewer" v-show="activeTabId === 'imageViewer'" :data="biolucidaData"
             :datasetInfo="datasetInfo" :file="file" />
@@ -40,7 +40,7 @@ import SegmentationViewer from '@/components/SegmentationViewer/SegmentationView
 import PlotViewer from '@/components/PlotViewer/PlotViewer'
 import VideoViewer from '@/components/VideoViewer/VideoViewer'
 import FileViewerMetadata from '@/components/ViewersMetadata/FileViewerMetadata.vue'
-import SparctaViewer from '@/components/SparctaViewer/SparctaViewer'
+import SPARCTAViewer from '@/components/SPARCTAViewer/SPARCTAViewer'
 import FormatDate from '@/mixins/format-date'
 import FetchPennsieveFile from '@/mixins/fetch-pennsieve-file'
 import FileDetails from '@/mixins/file-details'
@@ -58,7 +58,7 @@ export default {
     PlotViewer,
     VideoViewer,
     FileViewerMetadata,
-    SparctaViewer
+    SPARCTAViewer
   },
 
   mixins: [
@@ -87,12 +87,12 @@ export default {
       route.params.datasetId,
       route.params.datasetVersion
     )
-
+    
     let packageType =
       file.fileType == 'TIFF' ? 'TIFF' :
-      file.packageType == 'Image' ? 'Image' : // Biolucida
-        file.packageType == 'Unsupported' ? 'Unsupported' : // Segmentation
-          'Others' // All other types of files, e.g. plot, video, timeseries, etc.
+        file.packageType == 'Image' ? 'Image' : // Biolucida
+          file.packageType == 'Unsupported' ? 'Unsupported' : // Segmentation
+            'Others' // All other types of files, e.g. plot, video, timeseries, etc.
 
     // We should just be able to do as below and pull the source package id from file, but there are sometimes discrepancies between the pennsieve file sourcePackageId and the biolucida image data sourcePackageId returned from sparc.biolucida.net
     // const sourcePackageId = file.sourcePackageId
@@ -115,17 +115,17 @@ export default {
       console.log(`Error retrieving biolucida data (possibly because there is none for this file): ${e}`)
     }
 
-    let SparctaData = {}
+    let SPARCTAData = {}
     try {
       if (packageType == 'TIFF') {
-        SparctaData = {"number": 30}
+        SPARCTAData = {"number": 30}
       }
-      console.log(`Getting Sparcta data for ${packageType}`)
+      console.log(`Getting SPARCTA data for ${packageType}`)
     } catch(e) {
-      console.log(`Error retrieving Sparcta data (possibly because there is none for this file): ${e}`)
+      console.log(`Error retrieving sparcta data (possibly because there is none for this file): ${e}`)
     }
 
-    const hasSparctaViewer = !isEmpty(SparctaData)  
+    const hasSPARCTAViewer = !isEmpty(SPARCTAData)
 
     let biolucidaData = {}
     try {
@@ -209,7 +209,7 @@ export default {
       router.push(`/datasets/timeseriesviewer?dataset_id=${route.params.datasetId}&dataset_version=${route.params.datasetVersion}&file_path=${filePath}`)
     }
 
-    let activeTabId = hasSparctaViewer ? 'SparctaViewer' :
+    let activeTabId = hasSPARCTAViewer ? 'sparctaViewer' : 
       hasBiolucidaViewer ? 'imageViewer' :
       hasTimeseriesViewer ? 'timeseriesViewer' :
       hasSegmentationViewer ? 'segmentationViewer' : 
@@ -218,7 +218,7 @@ export default {
 
     return {
       biolucidaData,
-      SparctaData,
+      SPARCTAData,
       videoData,
       plotData,
       segmentationData: {
@@ -227,7 +227,7 @@ export default {
       },
       file,
       hasBiolucidaViewer,
-      hasSparctaViewer,
+      hasSPARCTAViewer,
       hasPlotViewer,
       hasVideoViewer,
       hasSegmentationViewer,
@@ -270,7 +270,7 @@ export default {
 
   computed: {
     hasViewer: function() {
-      return this.hasSparctaViewer || this.hasBiolucidaViewer || this.hasSegmentationViewer || this.hasPlotViewer || this.hasVideoViewer
+      return this.hasSPARCTAViewer || this.hasBiolucidaViewer || this.hasSegmentationViewer || this.hasPlotViewer || this.hasVideoViewer
     },
     datasetId: function() {
       return this.$route.params.datasetId
@@ -332,15 +332,15 @@ export default {
       },
       immediate: true
     },
-    hasSparctaViewer: {
+    hasSPARCTAViewer: {
       handler: function(hasViewer) {
         if (hasViewer) {
           this.tabs.push({
-            label: 'Sparcta Viewer',
-            id: 'SparctaViewer'
+            label: 'SPARCTA Viewer',
+            id: 'SPARCTAViewer'
           })
         } else {
-          this.tabs = this.tabs.filter(tab => tab.id !== 'SparctaViewer')
+          this.tabs = this.tabs.filter(tab => tab.id !== 'SPARCTAViewer')
         }
       },
       immediate: true

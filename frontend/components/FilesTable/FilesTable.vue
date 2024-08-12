@@ -180,7 +180,7 @@
               <div
                 v-if="isTiffFile(scope)"
                 class="circle"
-                @click="openFile(scope)"
+                @click="openViewerFile(scope)"
               >
                 <sparc-tooltip
                   placement="bottom-center"
@@ -563,6 +563,10 @@ export default {
         return (
           fileType == "TIFF"
         )
+    },
+
+    navigateToSPARCTAViewer(scope) {
+      this.$router.push({ name: 'SPARCTAViewer', params: { fileScope: scope } });
     },
 
     isFileTooLarge(file) {
@@ -948,6 +952,7 @@ export default {
         }
       }
 
+      console.log('Opening viewer file', route)
       this.$router.push(route)
     },
     /**

@@ -32,8 +32,8 @@
 ## Future Directions
 
 ## Team Members:
-- Haries (Lead, Frontend)
-- Archit (Backend)
-- Sruthi (Documentation, Backend-support)
-- Akram (Database)
-- Anmol (Database)
+- Haries (Lead, Frontend Developer, Writer Documentation)
+- Archit (Backend Developer, Writer Documentation)
+- Sruthi (Writer Documentation PIC, Backend-support)
+- Akram (Database Modeller, Writer Documentation)
+- Anmol (Database Modeller, Writer Documentation)
