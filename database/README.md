@@ -1,8 +1,6 @@
-# Database part of the project
 
----
 
-# Annotation Table
+# SPARC Tiff Annotator Database
 
 This document provides an overview of the `annotations` table schema, which is used to store and manage annotations related to images. The table supports various annotation types and includes metadata for tracking and managing these annotations.
 
