@@ -37,3 +37,4 @@ backend/flask_app/app/static/dataset/*
 
 # Python caches
 __pycache__/
+frontend/yarn.lock
