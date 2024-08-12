@@ -48,3 +48,20 @@ The application is designed to handle high-resolution TIFF image files efficient
 By converting TIFF images to DZI format, the application ensures that users can interact with high-resolution images smoothly, leveraging efficient loading and zooming capabilities while maintaining high image quality.
 
 ---
+
+## Requirements
+
+To set up the project, you'll need to install the required Python packages. These dependencies are specified in The `requirements.txt` file includes the following packages:
+
+
+- **`Werkzeug==2.2.2`**: A comprehensive WSGI web application library that Flask depends on for various utilities and functionalities.
+- **`flask==2.2.3`**: A lightweight WSGI web application framework that provides the core functionality for the project.
+- **`SQLAlchemy==2.0.32`**: A powerful SQL toolkit and Object-Relational Mapping (ORM) library for Python, used for database interactions.
+- **`scikit-image==0.24.0`**: A collection of algorithms for image processing, used for handling and processing image data.
+- **`sparc-me==3.0.0`**: A library for interacting with the SPARC dataset API.
+- **`Pillow==9.5.0`**: The Python Imaging Library (PIL) fork, used for opening, manipulating, and saving image files.
+- **`DeepZoomTools @ git+https://github.com/openzoom/deepzoom.py@master`**: A library for creating Deep Zoom Images (DZI) from high-resolution images, fetched directly from the GitHub repository.
+
+By installing these dependencies, you'll set up the environment needed to run and develop the project. Ensure you have Python 3.7 or later to avoid compatibility issues.
+
+---
