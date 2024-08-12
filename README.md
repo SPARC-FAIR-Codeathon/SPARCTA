@@ -20,7 +20,13 @@
 
 ## Introduction
 
-Imagine this: you're exploring the fascinating datasets on the [SPARC portal](https://sparc.science) when you stumble upon a dataset containing some intriguing microscopy images. Curious, you click on the dataset, hoping to quickly browse through some of these images. However, there's a catch: the images are stored in TIFF format, and SPARC doesn’t offer a web-based viewer for these files. But don’t worry: **SPARCTA** is here to save the day!
+The SPARC (Stimulating Peripheral Activity to Relieve Conditions) portal is a dynamic research platform that continuously expands its capabilities. It provides access to extensive datasets and a range of analytical tools, allowing researchers to fully explore and utilize the available data.
+
+New features and data are being added on an ongoing basis by researchers in the community, which has significantly strengthened the portal's usability and functionality.
+
+SPARCTA is an initiative under the SPARC-FAIR-Codeathon 2024 aimed at introducing a new feature to the SPARC Portal. This feature will enable users to annotate available images within the portal, further enhancing its capabilities and user experience.
+
+## Problem Definition
 
 SPARCTA (SPARC Tiff Annotator) is a web-based viewer for TIFF files that allows users on the SPARC portal to both view and create custom annotations for the TIFF files in SPARC datasets, developed by the Sparctans (Team #6) during the SPARC 2024 Codeathlon. Check out the [Team section](#team-members) for more information on our Team.
 
