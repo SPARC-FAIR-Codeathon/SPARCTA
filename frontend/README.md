@@ -16,3 +16,7 @@ Now if `file type == TIFF` "Open SPACRTA viewer button will appear"
 
 ## Related
 - [Figma design](https://www.figma.com/design/BCS3rpcSbwLDfVjOcHVGCJ/SPARC-Hackathon-Team-6?node-id=0-1&t=wcMz74B47sOALxnx-1)
+
+## Attribution
+
+- icons: Flaticon
