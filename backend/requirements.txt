@@ -4,4 +4,4 @@ SQLAlchemy==2.0.32
 scikit-image==0.24.0
 sparc-me==3.0.0
 Pillow==9.5.0
-openzoom @ git+https://github.com/openzoom/deepzoom.py@master
+DeepZoomTools @ git+https://github.com/openzoom/deepzoom.py@master
