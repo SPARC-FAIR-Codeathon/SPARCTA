@@ -95,3 +95,28 @@ In the future, we will be working towards the following features/removing the fo
 - [Archit](https://github.com/bhatnagararchit) (Backend, Documentation)
 - [Akram](https://github.com/akram0618) (Database, Backend)
 - [Anmol](https://github.com/codemeleon) (Database, Documentation)
+
+## Team Members:
+- Haries (Lead, Frontend Developer, Writer Documentation)
+- Archit (Backend Developer, Writer Documentation)
+- Sruthi (Writer Documentation PIC, Backend-support)
+- Akram (Database Modeller, Writer Documentation)
+- Anmol (Database Modeller, Writer Documentation)
+In the future, we will be working towards the following features/removing the following limitations in SPARCTA:
+- **Support for multi-dim TIFF**: Currently only 2D grayscale or RGB/RGBA TIFF images are supported, with no support for multi-channel, multi-slice or time-series TIFF images. In the future, we will work towards supporting such images, both the backend for rendering them on the viewer and on the frontend to allow users to explore multi-dimensional TIFF images.
+- **Dynamic deepzoom image generation**: Currently, we pre-create the deepzoom copies of each TIFF image, leading to more memory usage. We plan to implement dynamic generation of individual tiles of deepzoom images to alleviate this limitation.
+- **Annotation access controls**: Allowing users to control annotation visibility, either keeping them private, making them publicly accessible, or sharing them selectively with other users.
+- **Annotation curation**: Allow expert curation of user-/ai-generated annotations in SPARC Portal, where annotations can be accepted or rejected by qualified reviewers.
+- **AI-powered Annotation**: Leveraging curated data to train machine learning models and empowering all users to utilize this capability for annotating and exploring new images.
+
+## Reporting Issues
+
+- If you encounter an issue with SPARCTA, kindly report it by creating a new issue in our GitHub repository.
+- We also encourage you to share your solution by submitting a pull request if you've managed to resolve the problem yourself.
+
+## Team Members
+
+- [Haries](https://github.com/hariesramdhani) (Lead, Frontend)
+- [Archit](https://github.com/bhatnagararchit) (Backend, Documentation)
+- [Akram](https://github.com/akram0618) (Database, Backend)
+- [Anmol](https://github.com/codemeleon) (Database, Documentation)
