@@ -17,7 +17,7 @@
         <div v-if="showModal" class="modal">
             <div class="modal-content">
                 <span class="close" @click="closeModal">&times;</span>
-                <p>Welcome to SPARCTA! To start annotating, select the annotation type and press SHIFT.</p>
+                <p>Welcome to SPARCTA! To start annotating, select the annotation type and hold press SHIFT <br/><br/> <span style="font-size: 10px;">(Not the most ideal way but it works for now, we'll implement something easily in the future because of the time constraint).</span></p>
             </div>
         </div>
 
@@ -42,6 +42,10 @@ export default {
         imageUrl: {
             type: String,
             required: true
+        },
+        imageType: {
+            type: String,
+            default: 'png'
         }
     },
     data() {
@@ -72,7 +76,7 @@ export default {
                 element: this.$refs.viewer,
                 prefixUrl: 'https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.4.0/images/',
                 tileSources: {
-                    type: 'image',
+                    type: this.imageType == 'dzi' ? 'dzi' : 'image',
                     url: this.imageUrl
                 },
                 gestureSettingsTouch: {

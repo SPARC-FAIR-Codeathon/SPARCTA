@@ -35,7 +35,7 @@
 			<p style="text-align: left; padding: 0 5px;">SPARCTA</p>
 		</div>
 		<div style="border: 1px solid #dcdfe6; padding: 10px;">
-			<SparctaViewer imageUrl="/SPARC_H2104B_LM_X0.519Y-2.246_ChAT_Converted.png"/>
+			<SparctaViewer imageUrl="/test_new.dzi" imageType="dzi"/>
 		</div>
 	</div>
 	<div id="footer" style="display: flex; flex-direction: row; justify-content: flex-start;">
