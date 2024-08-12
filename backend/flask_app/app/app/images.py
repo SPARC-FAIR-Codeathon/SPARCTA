@@ -51,11 +51,13 @@ class TiffDziConvert:
         # Read tiff file, convert to RGB if multichannel
         source_img = img_as_ubyte(imread(source))
         if len(source_img.shape) == 2:
-            source_img = Image.fromarray(source_img,mode='L')
+            source_img = Image.fromarray(source_img, mode="L")
         elif len(source_img.shape) == 3:
-            source_img = Image.fromarray(source_img,mode='RGBA' if source_img.shape[-1] == 4 else 'RGB')
+            source_img = Image.fromarray(
+                source_img, mode="RGBA" if source_img.shape[-1] == 4 else "RGB"
+            )
         else:
-            return None # Image cannot be converted, giving up
+            return None  # Image cannot be converted, giving up
         # Create new folder in source folder to store the dzi file
         destination = source.parent / source.stem
         if destination.exists():
@@ -69,7 +71,11 @@ class TiffDziConvert:
 
 TEST_DATASET_ID = 125
 
-STATIC_DATASET_PATH = Path(__file__).absolute().parent / Path("./static/dataset")
+STATIC_PATH = Path(__file__).absolute().parent.parent / "static"
+
+STATIC_DATASET_PATH = STATIC_PATH / "dataset"
+
+TEST_IMG_PATH = STATIC_PATH / "test_img/test_img.dzi"
 
 TIFF_DZI_CONVERTER = TiffDziConvert(
     tile_size=128,
@@ -102,6 +108,8 @@ def create_test_dataset():
 
 
 def get_dataset_tif_file(relative_path):
+    if relative_path  == "test":
+        return TEST_IMG_PATH
     if relative_path[0] == "/":
         relative_path = relative_path[1:]
     tif_path = STATIC_DATASET_PATH / relative_path
