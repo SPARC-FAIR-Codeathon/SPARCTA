@@ -1,9 +1,9 @@
 
 ---
 
-# Image Annotation Backend
+# SPARC Tiff Annotator Backend
 
-This project is a Flask-based web application designed for managing image annotations. It allows users to upload images, view them, and add, update, or delete annotations. The project uses SQLAlchemy for database management and integrates with Deep Zoom for handling large image files.
+The backend part of the project is a Flask-based web application designed for managing image annotations. It allows users to upload images, view them, and add, update, or delete annotations. The project uses SQLAlchemy for database management and integrates with Deep Zoom for handling large image files.
 
 ## Features
 
