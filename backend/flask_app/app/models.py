@@ -32,10 +32,7 @@ class Annotation(Base):
     __tablename__ = 'annotations'
     id = Column(Integer, primary_key=True)
     # image: Mapped["Image"] = relationship(back_populates="image")
-    user = Column(String(255),
-                  unique=False,
-                  nullable=False,
-                  default="anonymous")
+    user_id = Column(Integer)
     annotation = Column(String(1024), unique=False, nullable=False)
     annotation_coordinates = Column(String(1024), unique=False,
                                     nullable=False)  # JSON
