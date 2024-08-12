@@ -33,4 +33,7 @@ tests/cypress/downloads
 sparc_portal_env_vars.sh
 
 # Example dataset
-backend/example_dataset/*
+backend/flask_app/app/static/dataset/*
+
+# Python caches
+__pycache__/
