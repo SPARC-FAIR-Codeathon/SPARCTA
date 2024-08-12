@@ -4,6 +4,19 @@
   <img src="assets/img/SPARCta logo header.png" alt="SPARCTA Header"/>
 </p>
 
+# Table of Contents
+
+1.  [Introduction](#introduction)
+2.  [Problem Definition](#problem-definition)
+3.  [Solution](#solution)
+4.  [Impact](#impact)
+5.  [Architecture](#architecture)
+6.  [Using SPARCTA](#using-sparcta)
+7.  [FAIR Practices](#fair-practices)
+8.  [Future Directions](#future-directions)
+9.  [Reporting Issues](#reporting-issues)
+10. [Team Members:](#team-members:)
+
 ## Introduction
 
 ## Problem Definition
