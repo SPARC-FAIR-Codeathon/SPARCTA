@@ -7,15 +7,14 @@
 # Table of Contents
 
 1.  [Introduction](#introduction)
-2.  [Problem Definition](#problem-definition)
-3.  [Solution](#solution)
+2.  [Current State](#current-state)
+3.  [Our Solution](#our-solution)
 4.  [Impact](#impact)
 5.  [Architecture](#architecture)
 6.  [Using SPARCTA](#using-sparcta)
-7.  [FAIR Practices](#fair-practices)
-8.  [Future Directions](#future-directions)
-9.  [Reporting Issues](#reporting-issues)
-10. [Team Members:](#team-members:)
+7.  [Future Directions](#future-directions)
+8.  [Reporting Issues](#reporting-issues)
+9.  [Team Members](#team-members)
 
 
 ## Introduction
@@ -28,7 +27,7 @@ SPARCTA (SPARC Tiff Annotator) is a web-based viewer for TIFF files that allows 
 
 At present, SPARC portal does not support vieweing TIFF images in their browser, requiring its users to download such files in order to view them. This can be inconvenient, especially when users might want a quick look at the image without needing to download it. The SPARC portal currently uses [BioLucida](https://www.biolucida.net/login) to render image files in browser, but it is currently not available for viewing TIFF images on the SPARC portal. Moreover, BioLucida's web viewer does not allow custom annotations to be made by users who are viewing the image in the web browser, further limiting the ability of the user to explore TIFF images in SPARC datasets.
 
-## SPARCTA: The Tiff Viewer for SPARC Portal
+## Our Solution
 
 In order to tackle these issues, we have developed a web-based viewer for TIFF files with annotation capabilities, called SPARCTA. SPARCTA has the following components and features:
 - **TIFF**:
