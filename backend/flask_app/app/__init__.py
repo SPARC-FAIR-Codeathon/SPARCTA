@@ -18,6 +18,7 @@ init_db()
 
 @app.route("/image/dzi", methods=["GET"])
 def get_image():
+    """Get DZI format image path from url"""
     tif_path = request.args.get('tif')
     dzi_file = get_dataset_tif_file(tif_path)
     if dzi_file is None:
@@ -29,13 +30,15 @@ def get_image():
 
 @app.route("/image_view")
 def image_view():
+    """Render image view html"""
     return render_template("index.html")
 
 
 @app.route("/get_annotations", methods=["POST", "GET"])
 def get_annotations():
+    """Get annotations from database and return as json for given image and user"""
     data = request.json[0]
-    print(data)
+
     annotation_list = []
     annotations = Annotation.query.filter(
         Annotation.image_id == data['source'],
@@ -53,6 +56,7 @@ def get_annotations():
 
 @app.route('/add_annotations', methods=['POST', 'GET'])
 def add_annotations():
+    """Add annotations to database for given image and user"""
     data = request.json
     already_in_db = []
     # TODO Check if annotation i
@@ -78,6 +82,7 @@ def add_annotations():
 
 @app.route('/remove_annotations', methods=['POST', 'GET'])
 def remove_annotations():
+    """Remove annotations from database for given image and user"""
     data = request.json
     print(data)
     for dt in data:
@@ -92,6 +97,7 @@ def remove_annotations():
 
 @app.route('/update_annotations', methods=['POST', 'GET'])
 def update_annotations():
+    """Update annotations in database for given image and user"""
     data = request.json
     for dt in data:
         annotation = Annotation.query.filter(
