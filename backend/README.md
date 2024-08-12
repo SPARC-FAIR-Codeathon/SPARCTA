@@ -1,8 +1,7 @@
-# Backend part of the project
 
 ---
 
-# Image Annotation Application
+# Image Annotation Backend
 
 This project is a Flask-based web application designed for managing image annotations. It allows users to upload images, view them, and add, update, or delete annotations. The project uses SQLAlchemy for database management and integrates with Deep Zoom for handling large image files.
 
