@@ -12,6 +12,7 @@ if REMAKE_TEST_DATASET:
     create_test_dataset()
 
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = "static/test_img"
 
 init_db()
 
@@ -20,12 +21,14 @@ init_db()
 def get_image():
     """Get DZI format image path from url"""
     tif_path = request.args.get('tif')
+    print(tif_path)
     dzi_file = get_dataset_tif_file(tif_path)
     if dzi_file is None:
         abort(404)
     else:
-        return str(dzi_file)
-        #return send_from_directory(dzi_file.parent, dzi_file.name)
+        # return str(dzi_file)
+        return send_from_directory(app.config['UPLOAD_FOLDER'],
+                                   f"{tif_path}_img.dzi")
 
 
 @app.route("/image_view")
