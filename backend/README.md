@@ -71,8 +71,8 @@ By installing these dependencies, you'll set up the environment needed to run an
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/image-sparc-tiff-annotator.git
-    cd image-sparc-tiff-annotator
+    git clone https://github.com/SPARC-FAIR-Codeathon/2024-team-6.git
+    cd 2024-team-6.git
     ```
 
 2. **Create and activate a virtual environment:**
