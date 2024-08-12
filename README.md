@@ -39,7 +39,7 @@ In order to tackle these issues, we have developed a web-based viewer for TIFF f
   - SPARCTA supports *annotations by multiple users* at once, allowing for enhanced collaboration between different users of the SPARC portal.
   - Users can also *save* their annotations for later use in a human-readable format.
 
-SPARCTA directly enhances the FAIRness of TIFF images hosted on the SPARC portal, by:
+SPARCTA directly enhances the FAIRness of TIFF images hosted on the SPARC portal:
 - *F*indable: Better exploration of TIFF images on the SPARC portal.
 - *A*ccessibility: No need to download TIFF images in order to access them, bringing TIFF images at par with other files such as JPEG images on the SPARC portal.
 - *I*nteroperability: SPARCTA stores annotations as json, which can read and interpreted by various other softwares.
@@ -52,7 +52,9 @@ Currently, images within the SPARC Portal are not capable of being annotated by 
 ## Architecture
 
 SPARCTA is essentially built of three components:
-- **Frontend**: The frontend for SPARCTA is forked from 
+- **Frontend**: The frontend for SPARCTA is forked from [SPARC Portal App](https://github.com/nih-sparc/sparc-app-2), with new functionality implemented for viewing TIFF files. In particular, the TIFF files are viewed as Deepzoom images using [OpenSeadragon](https://openseadragon.github.io/docs/) with annotations created using [Annotorious](https://github.com/annotorious/annotorious-openseadragon) plugin for OpenSeadragon. See [frontend README](./frontend/README.md) for details.
+- **Database**: Annotations are stored by SPARTCA in a sqlite database. See [database README](./database/README.md) for details.
+- **Backend**: For demonstration purposes, the backend for SPARCTA is currently provided by a flask application with both serves the Deepzoom images created from TIFF files to the frontend and stores the annotations received from the frontend in the database. See [backend README](./backend/README.md) for details.
 
 ## Using SPARCTA
 
