@@ -1,4 +1,3 @@
-
 # SPARC Tiff Annotator Backend
 
 The backend part of the project is a Python Flask-based web application designed for managing image annotations and serving deepzoom images generated using TIFF files. The flask web application serves the TIFF viewer on the frontend with dzi files. It uses SQLAlchemy for SQLite database to manage annotations made on TIFF files on the frontend, and serve them to the frontend when requested. This flask web app is meant to serve as a working example of what the SPARC portal backend would be serving to the SPARCTA frontend.
@@ -9,7 +8,7 @@ The backend part of the project is a Python Flask-based web application designed
 - **`app/database.py`**: Sets up the database connection using SQLAlchemy and initializes the database schema.
 - **`app/images.py`**: Handles downloading of test dataset into static, and conversion of TIFF files in the test dataset into DZI format using Deep Zoom tools.
 - **`app/models.py`**: Defines the database model `Annotation`, representing image and user ids and image associated annotations.
-- **`test.db`**: A SQLite database for storing user provided image annotations. 
+- **`test.db`**: A SQLite database for storing user provided image annotations.
 
 ### Mock dataset
 
@@ -46,27 +45,30 @@ By installing these dependencies, you'll set up the environment needed to run an
     ```
 
 2. **Create and activate a virtual environment:**
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-    ```
+
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
 
 3. **Install the dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 4. **Initialize the database:**
-    ```python
-    from app.database import init_db
-    init_db()
-    ```
+
+   ```python
+   from app.database import init_db
+   init_db()
+   ```
 
 5. **Run the application:**
-    ```bash
-    python app/__init__.py
-    ```
+
+   ```bash
+   python app/__init__.py
+   ```
 
 6. **Access the application:**
-    Open your web browser and go to `http://127.0.0.1:5000`
-
+   Open your web browser and go to `http://127.0.0.1:5000`
