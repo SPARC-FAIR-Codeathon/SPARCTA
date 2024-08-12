@@ -60,8 +60,8 @@ SPARCTA is essentially built of three components:
 
 To experience the current capabilities of the SPARCTA prototype, simply download and run it on your local machine. To do this, follow these setup instructions:
 
-- Launch a Flask server on port 5000 (see ./backend/README.md)
-- Run a React server (see ./frontend/README.md)
+- Launch a Flask server on port 5000 (see [backend README](./backend/README.md))
+- Run a React server (see [frontend README](./frontend/README.md))
 
 For detailed guidance on this process, please consult the README files within our frontend and backend directories.
 
