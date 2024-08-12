@@ -66,3 +66,37 @@ To set up the project, you'll need to install the required Python packages. Thes
 By installing these dependencies, you'll set up the environment needed to run and develop the project. Ensure you have Python 3.7 or later to avoid compatibility issues.
 
 ---
+
+## Installation
+
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/yourusername/image-sparc-tiff-annotator.git
+    cd image-sparc-tiff-annotator
+    ```
+
+2. **Create and activate a virtual environment:**
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+
+3. **Install the dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. **Initialize the database:**
+    ```python
+    from app.database import init_db
+    init_db()
+    ```
+
+5. **Run the application:**
+    ```bash
+    python app/__init__.py
+    ```
+
+6. **Access the application:**
+    Open your web browser and go to `http://127.0.0.1:5000`
+
