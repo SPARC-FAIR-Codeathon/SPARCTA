@@ -23,13 +23,9 @@ The SPARC (Stimulating Peripheral Activity to Relieve Conditions) portal is a dy
 
 New features and data are being added on an ongoing basis by researchers in the community, which has significantly strengthened the portal's usability and functionality.
 
-SPARCTA is an initiative under the SPARC-FAIR-Codeathon 2024 aimed at introducing a new feature to the SPARC Portal. This feature will enable users to annotate available images within the portal, further enhancing its capabilities and user experience.
+SPARCTA is an initiative under the SPARC-FAIR-Codeathon 2024 aimed at introducing a new feature to the SPARC Portal, that allows users of the SPARC portal to both view and create custom annotations for the TIFF files in SPARC datasets. This feature will enable users to annotate available images within the portal, further enhancing its capabilities and user experience. SPARCTA is developed by the Sparctans (Team #6) during the SPARC 2024 Codeathlon. Check out the [Team section](#team-members) for more information on our Team.
 
-## Problem Definition
-
-SPARCTA (SPARC Tiff Annotator) is a web-based viewer for TIFF files that allows users on the SPARC portal to both view and create custom annotations for the TIFF files in SPARC datasets, developed by the Sparctans (Team #6) during the SPARC 2024 Codeathlon. Check out the [Team section](#team-members) for more information on our Team.
-
-## Current State
+## Problem definition
 
 At present, SPARC portal does not support vieweing TIFF images in their browser, requiring its users to download such files in order to view them. This can be inconvenient, especially when users might want a quick look at the image without needing to download it. The SPARC portal currently uses [BioLucida](https://www.biolucida.net/login) to render image files in browser, but it is currently not available for viewing TIFF images on the SPARC portal. Moreover, BioLucida's web viewer does not allow custom annotations to be made by users who are viewing the image in the web browser, further limiting the ability of the user to explore TIFF images in SPARC datasets.
 
@@ -124,10 +120,6 @@ For detailed guidance on this process, please consult the README files within ou
 
 Because of the limited time of the hackathon we haven't fully incorporated all of the backend to the frontend, but the frontend should be usable as a playground to see how SPACTRA Viewer will look like.
 
-## Limitations
-
-The SPARC-app is failing to display DZI tiles when hosted on a separate server.
-
 ## Future Directions
 
 In the future, we will be working towards the following features/removing the following limitations in SPARCTA:
@@ -139,6 +131,10 @@ In the future, we will be working towards the following features/removing the fo
 - **Annotation curation**: Allow expert curation of user-/ai-generated annotations in SPARC Portal, where annotations can be accepted or rejected by qualified reviewers.
 - **AI-powered Annotation**: Leveraging curated data to train machine learning models and empowering all users to utilize this capability for annotating and exploring new images.
 - **Collaborative Annotation**: Allow multiple users to annotate the same image altogether
+
+### Limitations of the current implementation
+
+Our current implementation of SPRACTA fails to display DZI tiles if served from a separate server. Because of limited timme of the hackathon, we have not managed to get a working solution for this issue. Thus, for the purposes of this demo, we are using DZI files hosted on the frontend itself. We will work towards alleviating this limitation in our future work.
 
 ## Reporting Issues
 
