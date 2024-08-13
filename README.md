@@ -12,9 +12,10 @@
 4.  [Impact](#impact)
 5.  [Architecture](#architecture)
 6.  [Using SPARCTA](#using-sparcta)
-7.  [Future Directions](#future-directions)
-8.  [Reporting Issues](#reporting-issues)
-9.  [Team Members](#team-members)
+7.  [Functionality Overview](#functionality-overview)
+8.  [Future Directions](#future-directions)
+9.  [Reporting Issues](#reporting-issues)
+10.  [Team Members](#team-members)
 
 
 ## Introduction
