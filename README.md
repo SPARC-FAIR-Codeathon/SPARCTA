@@ -103,10 +103,6 @@ In addition to rectangle annotations, SPARCTA allows for freeform and other type
 
 Annotations created in SPARCTA can be easily downloaded and saved for future use. This functionality ensures that your annotations can be reused or shared as needed, facilitating continued work and collaboration.
 
-### Full Exploration
-<video src="assets/video/full_sparcta_exploration.mp4"></video>
-<p style="text-align: center;">A video showing a full exploration of sparta</p>
-
 ## Using SPARCTA
 
 To experience the current capabilities of the SPARCTA prototype, simply download and run it on your local machine. To do this, follow these setup instructions:
