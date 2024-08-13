@@ -133,7 +133,7 @@ In the future, we will be working towards the following features/removing the fo
 ## Team Members
 
 - [Haries](https://github.com/hariesramdhani) (Lead, Frontend)
-- [Archit](https://github.com/bhatnagararchit) (Backend, Documentation)
-- [Akram](https://github.com/akram0618) (Database, Backend)
-- [Anmol](https://github.com/codemeleon) (Database, Documentation)
+- [Anmol](https://github.com/codemeleon) (Backend, Database)
+- [Akram](https://github.com/akram0618) (Database, Documentation)
+- [Archit](https://github.com/bhatnagararchit) (Documentation, Backend)
 
