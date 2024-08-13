@@ -15,8 +15,7 @@
 7.  [Functionality Overview](#functionality-overview)
 8.  [Future Directions](#future-directions)
 9.  [Reporting Issues](#reporting-issues)
-10.  [Team Members](#team-members)
-
+10. [Team Members](#team-members)
 
 ## Introduction
 
@@ -37,17 +36,19 @@ At present, SPARC portal does not support vieweing TIFF images in their browser,
 ## Our Solution
 
 In order to tackle these issues, we have developed a web-based viewer for TIFF files with annotation capabilities, called SPARCTA. SPARCTA has the following components and features:
+
 - **TIFF viewer**:
-  - Users can freely *preview* TIFF files on the SPARC portal without having to download them.
-  - Users can also *zoom* in or out and *pan* across the image, for examining specific features in different parts of the image.
-  - SPARCTA also supports a *Full Screen* mode, allowing for detailed examination of the all features presented in the image by the users in one go.
+  - Users can freely _preview_ TIFF files on the SPARC portal without having to download them.
+  - Users can also _zoom_ in or out and _pan_ across the image, for examining specific features in different parts of the image.
+  - SPARCTA also supports a _Full Screen_ mode, allowing for detailed examination of the all features presented in the image by the users in one go.
 - **Annotations**:
-  - Users can create *custom annotations* on top of the image in order to highlight features in the image, tagged by their user name/id.
-  - SPARCTA supports *annotation history*, showing the users their previous annotations made in each session.
-  - SPARCTA supports *annotations by multiple users* at once, allowing for enhanced collaboration between different users of the SPARC portal.
-  - Users can also *save* their annotations for later use in a human-readable format.
+  - Users can create _custom annotations_ on top of the image in order to highlight features in the image, tagged by their user name/id.
+  - SPARCTA supports _annotation history_, showing the users their previous annotations made in each session.
+  - SPARCTA supports _annotations by multiple users_ at once, allowing for enhanced collaboration between different users of the SPARC portal.
+  - Users can also _save_ their annotations for later use in a human-readable format.
 
 SPARCTA directly enhances the FAIRness of TIFF images hosted on the SPARC portal:
+
 - *F*indable: Better exploration of TIFF images on the SPARC portal.
 - *A*ccessibility: No need to download TIFF images in order to access them, bringing TIFF images at par with other files such as JPEG images on the SPARC portal.
 - *I*nteroperability: SPARCTA stores annotations as json, which can read and interpreted by various other softwares.
@@ -123,9 +124,14 @@ For detailed guidance on this process, please consult the README files within ou
 
 Because of the limited time of the hackathon we haven't fully incorporated all of the backend to the frontend, but the frontend should be usable as a playground to see how SPACTRA Viewer will look like.
 
+## Limitations
+
+The SPARC-app is failing to display DZI tiles when hosted on a separate server.
+
 ## Future Directions
 
 In the future, we will be working towards the following features/removing the following limitations in SPARCTA:
+
 - **Incorporate SPARCTA into the SPARC Portal**: To integrate SPARCTA into the SPARC Portal for production use, follow the necessary steps to embed the SPARCTA component. This involves adapting the SPARCTA Viewer to fit within the existing infrastructure of the SPARC Portal, ensuring compatibility with its data and UI components.
 - **Support for multi-dim TIFF**: Currently only 2D grayscale or RGB/RGBA TIFF images are supported, with no support for multi-channel, multi-slice or time-series TIFF images. In the future, we will work towards supporting such images, both the backend for rendering them on the viewer and on the frontend to allow users to explore multi-dimensional TIFF images.
 - **Dynamic deepzoom image generation**: Currently, we pre-create the deepzoom copies of each TIFF image, leading to more memory usage. We plan to implement dynamic generation of individual tiles of deepzoom images to alleviate this limitation.
@@ -145,4 +151,3 @@ In the future, we will be working towards the following features/removing the fo
 - [Anmol](https://github.com/codemeleon) (Backend, Database)
 - [Akram](https://github.com/akram0618) (Database, Documentation)
 - [Archit](https://github.com/bhatnagararchit) (Documentation, Backend)
-
