@@ -52,6 +52,8 @@ Currently, images within the SPARC Portal are not capable of being annotated by 
 
 ## Architecture
 
+![SPARCTA Architecture](assets/img/sparcta_architecture.png)
+
 SPARCTA is a versatile Vue component designed for integration into any Vue-based web application, such as the SPARC Portal. Due to time constraints that prevented an in-depth exploration of the SPARC code base, we conducted a simulation using a mock database, backend, and frontend to evaluate SPARCTA's compatibility with the SPARC Portal.
 
 - **Frontend**: The frontend implementation of SPARCTA aims to replicate the [SPARC Portal App](https://github.com/nih-sparc/sparc-app-2) by integrating the SparctaViewer component for displaying TIFF files. TIFF files are rendered as Deepzoom images through [OpenSeadragon](https://openseadragon.github.io/docs/), with annotations managed using the [Annotorious](https://github.com/annotorious/annotorious-openseadragon) plugin for OpenSeadragon. For more details, see the [frontend README](./frontend/README.md).
