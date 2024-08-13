@@ -52,59 +52,78 @@ Currently, images within the SPARC Portal are not capable of being annotated by 
 
 ## Architecture
 
-SPARCTA is essentially built of three components:
-- **Frontend**: The frontend for SPARCTA is forked from [SPARC Portal App](https://github.com/nih-sparc/sparc-app-2), with new functionality implemented for viewing TIFF files. In particular, the TIFF files are viewed as Deepzoom images using [OpenSeadragon](https://openseadragon.github.io/docs/) with annotations created using [Annotorious](https://github.com/annotorious/annotorious-openseadragon) plugin for OpenSeadragon. See [frontend README](./frontend/README.md) for details.
-- **Database**: Annotations are stored by SPARTCA in a sqlite database. See [database README](./database/README.md) for details.
-- **Backend**: For demonstration purposes, the backend for SPARCTA is currently provided by a flask application with both serves the Deepzoom images created from TIFF files to the frontend and stores the annotations received from the frontend in the database. See [backend README](./backend/README.md) for details.
+SPARCTA is a versatile Vue component designed for integration into any Vue-based web application, such as the SPARC Portal. Due to time constraints that prevented an in-depth exploration of the SPARC code base, we conducted a simulation using a mock database, backend, and frontend to evaluate SPARCTA's compatibility with the SPARC Portal.
+
+- **Frontend**: The frontend implementation of SPARCTA aims to replicate the [SPARC Portal App](https://github.com/nih-sparc/sparc-app-2) by integrating the SparctaViewer component for displaying TIFF files. TIFF files are rendered as Deepzoom images through [OpenSeadragon](https://openseadragon.github.io/docs/), with annotations managed using the [Annotorious](https://github.com/annotorious/annotorious-openseadragon) plugin for OpenSeadragon. For more details, see the [frontend README](./frontend/README.md).
+- **Database**: Annotations are stored in a simulated SQLite database. Additional information can be found in the [database README](./database/README.md).
+- **Backend**: A Flask application currently serves as the backend for SPARCTA, handling the delivery of Deepzoom images from TIFF files to the frontend and managing the storage of annotations in the database. Refer to the [backend README](./backend/README.md) for more details.
 
 ## Functionality Overview
 
 ### Accessing SPARCTA
 
-![Accessing SPARCT](assets/gif/01_opening_sparcta.gif)
+![Accessing SPARCTA](assets/gif/01_opening_sparcta.gif)
+
+SPARCTA can be accessed through the SPARC Portal file tab of any dataset that includes TIFF files. When a dataset contains TIF-related files, an action button to open the SPARCTA Viewer will automatically appear. Please note that, due to the scope of this hackathon, we have only managed to develop the File List and SPARCTA Viewer components separately for demonstration purposes.
 
 ### SPARCTA Overview
+
 ![SPARCTA Overview](assets/gif/02_sparcta_overview.gif)
 
+Upon accessing the SPARCTA Viewer, you'll be greeted with a comprehensive interface designed for viewing TIFF files. The image above showcases the SPARCTA Viewer in action, highlighting its layout and key features.
+
 ### Zoom and Pan
+
 ![Zoom and Pan](assets/gif/03_zoom_function.gif)
 
+SPARCTA includes zoom and pan functionalities, allowing you to navigate through Deepzoom images with ease. This feature is crucial for detailed examination of large TIFF files, as demonstrated in the image above.
+
 ### Fullscreen Mode
+
 ![Fullscreen](assets/gif/04_fullscreen_mode.gif)
 
-### Rectange Annotation
+For an immersive viewing experience, SPARCTA provides a fullscreen mode. This mode enlarges the image to occupy the entire screen, offering a better view of intricate details and annotations.
+
+### Rectangle Annotation
+
 ![Rectangle Annotation](assets/gif/05_rect_annotation.gif)
 
+The SPARCTA Viewer supports rectangle annotations, enabling users to highlight specific areas of interest within the image. This tool is useful for marking and identifying regions with clear, defined boundaries.
+
 ### Freeform Annotation
+
 ![Freeform Annotation](assets/gif/06_freeform_annotation.gif)
 
+In addition to rectangle annotations, SPARCTA allows for freeform and other types of shapes annotations. This feature enables users to draw custom shapes and outlines on the image, providing flexibility for more complex annotations.
+
+### Download and Upload Annotations
+
+![Download Annotation](assets/gif/07_download_annotation.gif)
+![Upload Annotation](assets/gif/08_upload_annotation.gif)
+
+Annotations created in SPARCTA can be easily downloaded and saved for future use. This functionality ensures that your annotations can be reused or shared as needed, facilitating continued work and collaboration.
 
 ## Using SPARCTA
 
 To experience the current capabilities of the SPARCTA prototype, simply download and run it on your local machine. To do this, follow these setup instructions:
 
 - Launch a Flask server on port 5000 (see [backend README](./backend/README.md))
-- Run a React server (see [frontend README](./frontend/README.md))
+- Run Vue using `yarn` (see [frontend README](./frontend/README.md))
 
 For detailed guidance on this process, please consult the README files within our frontend and backend directories.
 
-Once you have successfully set up SPARCTA, you can begin testing its features by following these steps:
-
-1. Access the locally installed SPARC Portal to select an image in your web browser.
-2. Choose a TIFF image for annotation purposes.
-3. Select SPARCTA as your chosen annotation tool.
-4. Create one or more annotations within the selected image.
-5. Save your annotated work to preserve it for future reference.
-6. When you relaunch SPARCTA, your previously created annotations should be visible and ready to use.
+Because of the limited time of the hackathon we haven't fully incorporated all of the backend to the frontend, but the frontend should be usable as a playground to see how SPACTRA Viewer will look like.
 
 ## Future Directions
 
 In the future, we will be working towards the following features/removing the following limitations in SPARCTA:
+- **Incorporate SPARCTA into the SPARC Portal**: To integrate SPARCTA into the SPARC Portal for production use, follow the necessary steps to embed the SPARCTA component. This involves adapting the SPARCTA Viewer to fit within the existing infrastructure of the SPARC Portal, ensuring compatibility with its data and UI components.
 - **Support for multi-dim TIFF**: Currently only 2D grayscale or RGB/RGBA TIFF images are supported, with no support for multi-channel, multi-slice or time-series TIFF images. In the future, we will work towards supporting such images, both the backend for rendering them on the viewer and on the frontend to allow users to explore multi-dimensional TIFF images.
 - **Dynamic deepzoom image generation**: Currently, we pre-create the deepzoom copies of each TIFF image, leading to more memory usage. We plan to implement dynamic generation of individual tiles of deepzoom images to alleviate this limitation.
 - **Annotation access controls**: Allowing users to control annotation visibility, either keeping them private, making them publicly accessible, or sharing them selectively with other users.
 - **Annotation curation**: Allow expert curation of user-/ai-generated annotations in SPARC Portal, where annotations can be accepted or rejected by qualified reviewers.
 - **AI-powered Annotation**: Leveraging curated data to train machine learning models and empowering all users to utilize this capability for annotating and exploring new images.
+- **Collaborative Annotation**: Allow multiple users to annotate the same image altogether
 
 ## Reporting Issues
 
@@ -118,27 +137,3 @@ In the future, we will be working towards the following features/removing the fo
 - [Akram](https://github.com/akram0618) (Database, Backend)
 - [Anmol](https://github.com/codemeleon) (Database, Documentation)
 
-## Team Members:
-- Haries (Lead, Frontend Developer, Writer Documentation)
-- Archit (Backend Developer, Writer Documentation)
-- Sruthi (Writer Documentation PIC, Backend-support)
-- Akram (Database Modeller, Writer Documentation)
-- Anmol (Database Modeller, Writer Documentation)
-In the future, we will be working towards the following features/removing the following limitations in SPARCTA:
-- **Support for multi-dim TIFF**: Currently only 2D grayscale or RGB/RGBA TIFF images are supported, with no support for multi-channel, multi-slice or time-series TIFF images. In the future, we will work towards supporting such images, both the backend for rendering them on the viewer and on the frontend to allow users to explore multi-dimensional TIFF images.
-- **Dynamic deepzoom image generation**: Currently, we pre-create the deepzoom copies of each TIFF image, leading to more memory usage. We plan to implement dynamic generation of individual tiles of deepzoom images to alleviate this limitation.
-- **Annotation access controls**: Allowing users to control annotation visibility, either keeping them private, making them publicly accessible, or sharing them selectively with other users.
-- **Annotation curation**: Allow expert curation of user-/ai-generated annotations in SPARC Portal, where annotations can be accepted or rejected by qualified reviewers.
-- **AI-powered Annotation**: Leveraging curated data to train machine learning models and empowering all users to utilize this capability for annotating and exploring new images.
-
-## Reporting Issues
-
-- If you encounter an issue with SPARCTA, kindly report it by creating a new issue in our GitHub repository.
-- We also encourage you to share your solution by submitting a pull request if you've managed to resolve the problem yourself.
-
-## Team Members
-
-- [Haries](https://github.com/hariesramdhani) (Lead, Frontend)
-- [Archit](https://github.com/bhatnagararchit) (Backend, Documentation)
-- [Akram](https://github.com/akram0618) (Database, Backend)
-- [Anmol](https://github.com/codemeleon) (Database, Documentation)
